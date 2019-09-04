@@ -101,7 +101,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, User $user, $id)
     {
-        //$this->authorize($user);
+        $this->authorize('update', $user);
         $image_name = $request->hidden_image;
         $image = $request->file('image');
         if($image != '')

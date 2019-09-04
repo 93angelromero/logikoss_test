@@ -21,6 +21,6 @@ class PostPolicy
     }
 
     public function update(User $user){
-        return $user->id === 1;
+        return $user->id == 1;
     }
 }
