@@ -16,6 +16,13 @@
         <h1 class="text-center">Posts</h1>
     </div>
     <div class="card-body">
+        
+        <form action="{{ route('posts.index') }}" method="GET" class="navbar-form navbar-left pull-left" role="search">    
+            <div class="form-inline">
+                <input type="text" name="slug" class="form-control mr-sm-2" placeholder="Slug...">
+                <button type="submit" class="btn btn-outline-info my-2 my-sm-0">Buscar</button>
+            </div>
+        </form><br><br>
         <table class="table table-bordered table-striped">
             <tr>
                 <th>Id</th>

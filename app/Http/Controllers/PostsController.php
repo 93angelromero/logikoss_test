@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Scope;
+use Illuminate\Database\Eloquent\Builder;
 
 class PostsController extends Controller
 {
@@ -16,7 +18,11 @@ class PostsController extends Controller
     public function index(Request $request)
     {
         $request->user()->authorizeRoles(['user', 1]);
-        $data = Post::latest()->paginate(5);
+
+        //$request->get('slug');
+
+        $data = Post::slug($request->get('slug'))->latest()->paginate(5);
+        //$data = Post::slug($request->get('slug'))->orderBy('id', 'DESC')->get();
         return view('Posts.index', compact('data'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
     }
