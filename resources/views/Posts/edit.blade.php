@@ -26,14 +26,6 @@
         </div>
         <br /><br /><br />
         <div class="form-group">
-            <label class="col-md-4 text-right">Contenido</label>
-            <div class="col-md-8">
-                <!--<input type="text" name="correo" value="{{ $data->correo }}" class="form-control input-lg" />-->
-                <textarea name="content" id="edit" class="form-control input-lg">{{ $data->content }}</textarea>
-            </div>
-        </div>
-        <br /><br /><br />
-        <div class="form-group">
             <label class="col-md-4 text-right">Slug:</label>
             <div class="col-md-8">
                 <input type="text" name="slug" value="{{ $data->slug }}" class="form-control input-lg" />
@@ -46,6 +38,14 @@
                 <input type="file" name="image" />
                 <img src="{{ URL::to('/') }}/images/posts/{{ $data->image }}" class="img-thumbnail" width="100" />
                 <input type="hidden" name="hidden_image" value="{{ $data->image }}" />
+            </div>
+        </div>
+        <br /><br /><br />
+        <div class="form-group">
+            <label class="col-md-12">Contenido</label>
+            <div class="col-md-12">
+                <!--<input type="text" name="correo" value="{{ $data->correo }}" class="form-control input-lg" />-->
+                <textarea name="content" id="edit" class="form-control input-lg">{{ $data->content }}</textarea><br />
             </div>
         </div>
         <br /><br /><br />
